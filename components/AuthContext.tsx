@@ -180,48 +180,38 @@ export function AuthProvider({ children }: AuthProviderProps) {
   };
 
   const updatePreferences = (newPreferences: Partial<User['preferences']>) => {
-    if (!user) return;
+  if (!user) return;
 
-    // Fix: Handle case where user.preferences might be undefined
-    const currentPreferences = user.preferences || {
-      theme: 'light' as const,
-      notifications: true,
-      emailUpdates: true,
-      reducedMotion: false,
-      compactView: false,
-      soundEnabled: true,
-      autoSave: true
-    };
-
-    const updatedPreferences = { ...currentPreferences, ...newPreferences };
-    const updatedUser = { ...user, preferences: updatedPreferences };
-    
-    setUser(updatedUser);
-
-    // Update stored auth data
-    const authData = {
-      isAuthenticated: true,
-      user: updatedUser
-    };
-    localStorage.setItem('aceint_auth', JSON.stringify(authData));
-
-    // Store preferences separately for quick access
-    localStorage.setItem('aceint_preferences', JSON.stringify(updatedPreferences));
-
-    // Apply theme changes immediately
-    if (newPreferences.theme) {
-      document.documentElement.classList.toggle('dark', newPreferences.theme === 'dark');
-    }
-
-    // Apply reduced motion preference
-    if (newPreferences.reducedMotion !== undefined) {
-      if (newPreferences.reducedMotion) {
-        document.documentElement.style.setProperty('--animation-duration', '0s');
-      } else {
-        document.documentElement.style.removeProperty('--animation-duration');
-      }
-    }
+  const currentPreferences = user.preferences || {
+    theme: 'light' as const,
+    notifications: true,
+    emailUpdates: true,
+    reducedMotion: false,
+    compactView: false,
+    soundEnabled: true,
+    autoSave: true,
   };
+
+  const updatedPreferences = { ...currentPreferences, ...newPreferences };
+  const updatedUser = { ...user, preferences: updatedPreferences };
+
+  setUser(updatedUser);
+  localStorage.setItem('aceint_auth', JSON.stringify({ isAuthenticated: true, user: updatedUser }));
+  localStorage.setItem('aceint_preferences', JSON.stringify(updatedPreferences));
+
+  if (newPreferences?.theme) {
+    document.documentElement.classList.toggle('dark', newPreferences.theme === 'dark');
+  }
+
+  if (newPreferences?.reducedMotion !== undefined) {
+    if (newPreferences.reducedMotion) {
+      document.documentElement.style.setProperty('--animation-duration', '0s');
+    } else {
+      document.documentElement.style.removeProperty('--animation-duration');
+    }
+  }
+};
+
 
   const value: AuthContextType = {
     user,
