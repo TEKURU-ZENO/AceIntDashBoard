@@ -264,7 +264,7 @@ export function NotificationBell() {
                       variant="outline"
                       size="sm"
                       onClick={() => {
-                        markAsRead();
+                        markAllAsRead();
                         setIsOpen(false);
                       }}
                       className="text-xs"
