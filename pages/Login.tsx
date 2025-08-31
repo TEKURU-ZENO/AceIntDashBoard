@@ -152,7 +152,7 @@ export default function Login() {
     
     // Clear error when user starts typing
     if (errors[field]) {
-      setErrors(prev => ({ ...prev, [field]: undefined }));
+      setErrors(prev => ({ ...prev, [field]: '' }));
     }
   };
 
