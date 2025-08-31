@@ -40,7 +40,7 @@ import {
 } from 'lucide-react';
 
 export default function Settings() {
-  const { user, updateProfile, updatePreferences, logout } = useAuth();
+  const { user, updateProfile, updatePreferences } = useAuth();
   const { addNotification } = useNotifications();
   const [activeTab, setActiveTab] = useState('profile');
   const [isLoading, setIsLoading] = useState(false);
