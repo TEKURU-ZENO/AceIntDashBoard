@@ -665,22 +665,32 @@ export default function Settings() {
                         </p>
                       </div>
                       <Switch
-                        checked={preferences.notifications}
-                        onCheckedChange={(checked) => setPreferences({ ...preferences, notifications: checked })}
+                        checked={preferences?.notifications || false}
+                        onCheckedChange={(checked) => 
+                          setPreferences(prev => ({ 
+                            ...(prev || {}), 
+                            notifications: checked 
+                          }))
+                        }
                       />
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <div className="space-y-1">
-                        <Label>Email Updates</Label>
-                        <p className="text-sm text-muted-foreground">
-                          Receive important updates via email
-                        </p>
                       </div>
-                      <Switch
-                        checked={preferences.emailUpdates}
-                        onCheckedChange={(checked) => setPreferences({ ...preferences, emailUpdates: checked })}
+                      <div className="flex items-center justify-between">
+                        <div className="space-y-1">
+                          <Label>Email Updates</Label>
+                          <p className="text-sm text-muted-foreground">
+                            Receive important updates via email
+                          </p>
+                        </div>
+                        <Switch
+                          checked={preferences?.emailUpdates || false}
+                          onCheckedChange={(checked) => 
+                            setPreferences(prev => ({ 
+                            ...(prev || {}), 
+                            emailUpdates: checked 
+                          }))
+                        }
                       />
+
                     </div>
 
                     <Separator />
