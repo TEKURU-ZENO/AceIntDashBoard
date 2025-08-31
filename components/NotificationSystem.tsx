@@ -173,7 +173,7 @@ export function NotificationProvider({ children }: NotificationProviderProps) {
 
 // Notification Bell Component for Header
 export function NotificationBell() {
-  const { notifications, unreadCount, markAsRead } = useNotifications();
+  const { notifications, unreadCount, markAsRead, markAllAsRead } = useNotifications();
   const [isOpen, setIsOpen] = useState(false);
 
   const getNotificationIcon = (category: string) => {
