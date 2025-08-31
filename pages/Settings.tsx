@@ -60,7 +60,7 @@ export default function Settings() {
   });
 
   const [preferences, setPreferences] = useState({
-  theme: (user?.preferences?.theme || 'light') as 'light' | 'dark' | 'auto',
+  theme: (user?.preferences?.theme || 'light') as 'light' | 'dark',
   notifications: user?.preferences?.notifications ?? true,
   emailUpdates: user?.preferences?.emailUpdates ?? true,
   reducedMotion: user?.preferences?.reducedMotion ?? false,
