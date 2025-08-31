@@ -60,14 +60,14 @@ export default function Settings() {
   });
 
   const [preferences, setPreferences] = useState({
-    theme: user?.preferences?.theme || 'light',
-    notifications: user?.preferences?.notifications || true,
-    emailUpdates: user?.preferences?.emailUpdates || true,
-    reducedMotion: user?.preferences?.reducedMotion || false,
-    soundEnabled: true,
-    autoSave: true,
-    compactView: false
-  });
+  theme: (user?.preferences?.theme || 'light') as 'light' | 'dark' | 'auto',
+  notifications: user?.preferences?.notifications ?? true,
+  emailUpdates: user?.preferences?.emailUpdates ?? true,
+  reducedMotion: user?.preferences?.reducedMotion ?? false,
+  soundEnabled: user?.preferences?.soundEnabled ?? true,
+  autoSave: user?.preferences?.autoSave ?? true,
+  compactView: user?.preferences?.compactView ?? false
+});
 
   const handleProfileSave = async () => {
     setIsLoading(true);
