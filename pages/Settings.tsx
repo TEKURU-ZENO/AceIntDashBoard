@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -20,7 +20,6 @@ import {
   Bell,
   Shield,
   Palette,
-  Globe,
   Download,
   Upload,
   Trash2,
@@ -29,13 +28,8 @@ import {
   Camera,
   CheckCircle,
   AlertTriangle,
-  Info,
-  Key,
   Smartphone,
-  Mail,
   Lock,
-  HelpCircle,
-  ExternalLink,
   Save
 } from 'lucide-react';
 
