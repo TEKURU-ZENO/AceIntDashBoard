@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -20,11 +20,7 @@ import {
   Linkedin,
   Mail,
   Phone,
-  MapPin,
-  Award,
-  TrendingUp,
-  Globe,
-  Target
+  MapPin
 } from 'lucide-react';
 
 const features = [
