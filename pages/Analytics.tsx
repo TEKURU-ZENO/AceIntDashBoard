@@ -69,15 +69,6 @@ const departmentData = [
   { department: "Sales", open: 5, filled: 8, pipeline: 29 }
 ];
 
-const monthlyData = [
-  { month: "Jan", applications: 180, interviews: 45, hires: 8 },
-  { month: "Feb", applications: 220, interviews: 62, hires: 12 },
-  { month: "Mar", applications: 195, interviews: 58, hires: 10 },
-  { month: "Apr", applications: 245, interviews: 71, hires: 15 },
-  { month: "May", applications: 268, interviews: 84, hires: 18 },
-  { month: "Jun", applications: 312, interviews: 96, hires: 22 }
-];
-
 export default function Analytics() {
   const getTrendIcon = (trend: string) => {
     return trend === "up" ? (
