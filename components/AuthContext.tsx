@@ -69,7 +69,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     initializeAuth();
   }, []);
 
-  const login = async (email: string, password: string, remember = false) => {
+  const login = async (email: string, _password: string, remember = false) => {
     setIsLoading(true);
     
     try {
@@ -88,7 +88,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
           theme: 'light',
           notifications: true,
           emailUpdates: true,
-          reducedMotion: false
+          reducedMotion: false,
+          compactView: false,
+          soundEnabled: true,
+          autoSave: true
         }
       };
 
