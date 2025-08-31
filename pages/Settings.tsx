@@ -64,9 +64,11 @@ export default function Settings() {
   notifications: user?.preferences?.notifications ?? true,
   emailUpdates: user?.preferences?.emailUpdates ?? true,
   reducedMotion: user?.preferences?.reducedMotion ?? false,
-  soundEnabled: user?.preferences?.soundEnabled ?? true,
-  autoSave: user?.preferences?.autoSave ?? true,
-  compactView: user?.preferences?.compactView ?? false
+});
+  const [localPreferences, setLocalPreferences] = useState({
+  soundEnabled: true,
+  autoSave: true,
+  compactView: false
 });
 
   const handleProfileSave = async () => {
