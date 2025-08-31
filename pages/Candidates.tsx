@@ -3,7 +3,7 @@ import { DashboardHeader } from "../components/DashboardHeader";
 import { DashboardSidebar } from "../components/DashboardSidebar";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import { Progress } from "../components/ui/progress";
 import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
@@ -12,7 +12,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { 
   Search, 
   Filter, 
-  Star,
   MapPin,
   Calendar,
   Mail,
@@ -20,7 +19,6 @@ import {
   LinkedinIcon,
   FileText,
   Brain,
-  TrendingUp,
   User,
   Briefcase,
   GraduationCap,
