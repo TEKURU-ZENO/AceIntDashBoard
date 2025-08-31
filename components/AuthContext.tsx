@@ -179,7 +179,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     localStorage.setItem('aceint_auth', JSON.stringify(authData));
   };
 
-  const updatePreferences = (preferences: Partial<User['preferences']>) => {
+  const updatePreferences = (newPreferences: Partial<User['preferences']>) => {
     if (!user) return;
 
     // Fix: Handle case where user.preferences might be undefined
@@ -193,7 +193,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       autoSave: true
     };
 
-    const updatedPreferences = { ...currentPreferences, ...preferences };
+    const updatedPreferences = { ...currentPreferences, ...newPreferences };
     const updatedUser = { ...user, preferences: updatedPreferences };
     
     setUser(updatedUser);
@@ -209,13 +209,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
     localStorage.setItem('aceint_preferences', JSON.stringify(updatedPreferences));
 
     // Apply theme changes immediately
-    if (preferences.theme) {
-      document.documentElement.classList.toggle('dark', preferences.theme === 'dark');
+    if (newPreferences.theme) {
+      document.documentElement.classList.toggle('dark', newPreferences.theme === 'dark');
     }
 
     // Apply reduced motion preference
-    if (preferences.reducedMotion !== undefined) {
-      if (preferences.reducedMotion) {
+    if (newPreferences.reducedMotion !== undefined) {
+      if (newPreferences.reducedMotion) {
         document.documentElement.style.setProperty('--animation-duration', '0s');
       } else {
         document.documentElement.style.removeProperty('--animation-duration');
