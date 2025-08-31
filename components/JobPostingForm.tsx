@@ -13,7 +13,6 @@ import { Alert, AlertDescription } from './ui/alert';
 import { 
   Brain, 
   DollarSign, 
-  MapPin, 
   Users, 
   Clock, 
   Sparkles,
