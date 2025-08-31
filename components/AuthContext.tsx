@@ -12,6 +12,9 @@ interface User {
     notifications: boolean;
     emailUpdates: boolean;
     reducedMotion: boolean;
+    compactView: boolean; 
+    soundEnabled: boolean;
+    autoSave: boolean; 
   };
 }
 
