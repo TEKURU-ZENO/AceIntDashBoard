@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
@@ -10,8 +10,6 @@ import {
   EyeOff, 
   Volume2, 
   VolumeX, 
-  Keyboard, 
-  MousePointer, 
   Monitor,
   Smartphone,
   Tablet,
