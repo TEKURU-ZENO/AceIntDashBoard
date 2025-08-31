@@ -513,7 +513,6 @@ export function JobPostingForm({ onSubmit, onCancel }: {
                   ))}
                 </div>
               )}
-            </div>
           </CardContent>
         </Card>
       </div>
