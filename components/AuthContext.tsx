@@ -173,7 +173,15 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const updatePreferences = (preferences: Partial<User['preferences']>) => {
     if (!user) return;
 
-    const updatedPreferences = { ...user.preferences, ...preferences };
+    // Fix: Handle case where user.preferences might be undefined
+    const currentPreferences = user.preferences || {
+      theme: 'light' as const,
+      notifications: true,
+      emailUpdates: true,
+      reducedMotion: false
+    };
+
+    const updatedPreferences = { ...currentPreferences, ...preferences };
     const updatedUser = { ...user, preferences: updatedPreferences };
     
     setUser(updatedUser);
