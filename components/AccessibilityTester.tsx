@@ -487,7 +487,7 @@ export function AccessibilityTester() {
                 <AlertTriangle className="h-4 w-4" />
                 <AlertDescription>
                   <strong>AI Interface Guidelines:</strong> AI confidence scoring displays proper thresholds 
-                  (90%+ High, 70-89% Medium, <70% Low) but could benefit from additional visual indicators.
+                  (90%+ High, 70-89% Medium, &lt;70% Low) but could benefit from additional visual indicators.
                 </AlertDescription>
               </Alert>
 
