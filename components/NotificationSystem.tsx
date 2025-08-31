@@ -12,7 +12,6 @@ import {
   BellRing,
   Clock,
   User,
-  Users,
   Briefcase,
   BarChart3
 } from 'lucide-react';
