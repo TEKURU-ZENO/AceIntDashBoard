@@ -515,7 +515,7 @@ export function JobPostingForm({ onSubmit, onCancel }: {
               )}
             </div>
           </CardContent>
-        </card>
+        </Card>
       </div>
     </div>
   </div>
