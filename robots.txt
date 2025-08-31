@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aceint.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Disallow sensitive areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*?*
+Disallow: /*.json$
