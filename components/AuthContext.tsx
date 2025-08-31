@@ -131,7 +131,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
           theme: 'light',
           notifications: true,
           emailUpdates: true,
-          reducedMotion: false
+          reducedMotion: false,
+          compactView: false, 
+          soundEnabled: true, 
+          autoSave: true
         }
       };
 
@@ -181,7 +184,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
       theme: 'light' as const,
       notifications: true,
       emailUpdates: true,
-      reducedMotion: false
+      reducedMotion: false,
+      compactView: false,
+      soundEnabled: true,
+      autoSave: true
     };
 
     const updatedPreferences = { ...currentPreferences, ...preferences };
