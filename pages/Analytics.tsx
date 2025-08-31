@@ -10,14 +10,10 @@ import {
   TrendingUp, 
   TrendingDown,
   Users,
-  Clock,
-  DollarSign,
   Target,
-  Calendar,
   Download,
   Filter,
   BarChart3,
-  PieChart,
   LineChart,
   Activity
 } from "lucide-react";
