@@ -15,7 +15,6 @@ import {
   PieChart, 
   TrendingUp,
   Users,
-  Briefcase,
   Calendar
 } from "lucide-react";
 
